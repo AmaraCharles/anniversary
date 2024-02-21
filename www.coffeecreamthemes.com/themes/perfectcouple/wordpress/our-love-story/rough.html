@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+         .box {
+        width: calc(25% - 10px); /* Adjust the width of each box */
+        height: 100px; /* Adjust the height of each box */
+        background-color: #ccc; /* Default background color */
+        display: inline-block;
+        margin: 5px; /* Adjust the margin between boxes */
+    }
+    </style>
+    <div id="boxGrid" style="border:1px solid black; width:500px; height: 500px;"></div>
+    
+    </div>
+</div>
+<script>
+    // Define an array of objects
+   // Wrap the code inside a function
+function createBoxGrid() {
+    var colorsArray = [
+        { color: "red", type: "square", URL: "https://example.com/red" },
+        { color: "blue", type: "circle", URL: "https://example.com/blue" },
+        { color: "green", type: "triangle", URL: "https://example.com/green" },
+        { color: "yellow", type: "square", URL: "https://example.com/yellow" },
+        { color: "orange", type: "circle", URL: "https://example.com/orange" },
+        { color: "purple", type: "triangle", URL: "https://example.com/purple" },
+        { color: "pink", type: "square", URL: "https://example.com/pink" },
+        { color: "cyan", type: "circle", URL: "https://example.com/cyan" }
+    ];
+    var boxGrid = document.getElementById("boxGrid");
+
+    // Loop through the array and create box elements
+    colorsArray.forEach(function (item) {
+        // Create a box element
+        var box = document.createElement("div");
+        // Apply styles and properties
+        box.className = "box";
+        box.style.backgroundColor = item.color;
+        box.setAttribute("data-type", item.type);
+        box.setAttribute("data-url", item.URL);
+        // Append the box to the container
+        // console.log(box);
+        boxGrid.innerHTML += '<div class="box"></div>'
+                console.log(box);
+    });
+}
+
+// Call the function when the document is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    createBoxGrid();
+});
+
+</script>
+
+
+</body>
+</html>
